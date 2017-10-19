@@ -1,0 +1,4 @@
+---
+
+  - name: Configure sensuctl
+    shell: sensuctl configure --api-url "http://localhost:8080" --environment "{{ sensu_environment }}" --organization "{{ sensu_organization }}" --username "{{ sensu_backend.user }}" --password "{{ sensu_backend.password }}"

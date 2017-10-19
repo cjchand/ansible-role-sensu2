@@ -1,0 +1,6 @@
+---
+
+  - name: Install sensu-agent
+    yum: 
+      name: sensu-agent
+      state: present

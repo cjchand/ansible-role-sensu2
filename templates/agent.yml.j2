@@ -1,0 +1,26 @@
+---
+##
+# agent configuration
+##
+agent-id: ""
+organization: "{{ sensu_organization }}"
+environment: "{{ sensu_environment }}"
+subscriptions: "{{ sensu_agent.subscriptions }}"
+backend-url:
+  {% for hostname in groups['sensu_backend'] %}- "ws://{{ hostname }}:8081"{% if not loop.last %}
+  {% endif %}{% endfor %}
+
+##
+# authentication configuration
+##
+user: "{{ sensu_agent.user }}"
+password: "{{ sensu_agent.password }}"
+
+##
+# other
+##
+cache-dir: "{{ sensu_agent.cache_dir }}"
+deregister: {{ sensu_agent.deregister }}
+deregistration-handler: "{{ sensu_agent.deregistration_handler }}"
+keepalive-timeout: {{ sensu_agent.keepalive_timeout }}
+keepalive-internal: {{ sensu_agent.keepalive_internal }}

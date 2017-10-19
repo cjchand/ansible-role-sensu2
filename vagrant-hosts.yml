@@ -1,0 +1,13 @@
+---
+hosts:
+  sensu-server-01:
+    ip: 192.168.20.46
+    mem: 1024
+    cpus: 2
+    forwards: [{'host': 8080, 'guest': 8080}, {'host': 8081, 'guest': 8081}, {'host': 2380, 'guest': 2380}, {'host': 3000, 'guest': 3000}]
+    hostname: sensu-server-01
+  sensu-agent-01:
+    ip: 192.168.20.47
+    mem: 512
+    cpus: 1
+    hostname: sensu-agent-01

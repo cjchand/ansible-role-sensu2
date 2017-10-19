@@ -1,0 +1,12 @@
+---
+
+  - name: Install sensu-backend
+    yum: 
+      name: sensu-backend
+      state: present
+    notify: restart sensu-backend
+
+  - name: Install sensuctl
+    yum: 
+      name: sensu-cli
+      state: present

@@ -1,0 +1,3 @@
+---
+
+package_cloud_command: "curl -s https://{{ sensu_repo_token }}:@packagecloud.io/install/repositories/sensu/prerelease/script.deb.sh | sudo bash"

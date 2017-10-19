@@ -1,0 +1,7 @@
+---
+
+  - name: Deploy sensu-agent config
+    template: 
+      src: agent.yml.j2
+      dest: /etc/sensu/agent.yml
+    notify: restart sensu-agent

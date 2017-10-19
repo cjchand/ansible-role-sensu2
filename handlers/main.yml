@@ -1,0 +1,14 @@
+---
+# handlers file for sensu2
+
+  - name: restart sensu-backend
+    service:
+      name: sensu-backend
+      state: restarted
+      enabled: yes
+
+  - name: restart sensu-agent
+    service:
+      name: sensu-agent
+      state: restarted
+      enabled: yes

@@ -1,0 +1,35 @@
+---
+##
+# general configuration
+##
+state-dir: "{{ sensu_backend.state_dir }}"
+
+##
+# agent configuration
+##
+agent-host: {{ sensu_backend.agent_host }}
+agent-port: {{ sensu_backend.agent_port }}
+
+##
+# api configuration
+##
+api-host: {{ sensu_backend.api_host }}
+api-port: {{ sensu_backend.api_host }}
+
+##
+# ssl configuration
+##
+#cert-file "/path/to/ssl/cert.pem"
+#key-file "/path/to/ssl/key.pem"
+#trusted-ca-file "/path/to/trusted-certificate-authorities.pem"
+#insecure-skip-tls-verify false
+
+##
+# store configuration
+##
+#store-client-url "{{ sensu_backend.store.client_url }}"
+#store-peer-url "{{ sensu_backend.store.peer_url }}"
+#store-initial-cluster "{{ sensu_backend.store.initial_cluster }}"
+#store-initial-advertise-peer-url "{{ sensu_backend.store.initial_advertise_peer_url }}"
+#store-initial-cluster-state "{{ sensu_backend.store.initial_cluster_state }}"
+#store-initial-cluster-token "{{ sensu_backend.store.initial_cluster_token }}"

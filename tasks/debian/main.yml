@@ -1,0 +1,15 @@
+---
+
+# Found that curl isn't installed by default in Jessie
+- name: Ensure that curl is installed
+  apt:
+    name: curl
+    state: present
+
+- name: Add Sensu 2.0 repo
+  shell: "{{ package_cloud_command }}"
+
+- include: install-backend.yml
+  when: inventory_hostname in groups['sensu_backend']
+
+- include: install-agent.yml

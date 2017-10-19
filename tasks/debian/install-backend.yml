@@ -1,0 +1,12 @@
+---
+
+  - name: Install sensu-backend
+    apt: 
+      name: sensu-backend
+      state: present
+    notify: restart sensu-backend
+
+  - name: Install sensuctl
+    apt: 
+      name: sensu-cli
+      state: present

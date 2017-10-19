@@ -1,0 +1,14 @@
+--- 
+
+  - name: Deploy sensu-backend config
+    template: src=backend.yml.j2 dest=/etc/sensu/backend.yml
+    notify: restart sensu-backend
+
+  # Need to ensure sensu-backend is started upon initial deploy, else sensuctl commands will fail
+  - meta: flush_handlers
+
+  - name: Wait for API to come alive
+    wait_for:
+      host: localhost
+      port: 8080
+      delay: 5

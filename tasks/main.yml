@@ -1,0 +1,15 @@
+---
+
+  - include_vars: "{{ ansible_distribution }}.yml"
+
+  # Install binaries based on OS type
+  - include: "{{ role_path }}/tasks/{{ ansible_distribution }}/main.yml"
+
+  - include: configure-backend.yml
+    when: inventory_hostname in groups['sensu_backend']
+
+  - include: configure-sensuctl.yml
+    when: inventory_hostname in groups['sensu_backend']
+
+  - include: configure-agent.yml
+  

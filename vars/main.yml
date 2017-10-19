@@ -1,0 +1,37 @@
+---
+# vars file for sensu2
+
+# Global variables
+remote_user: vagrant
+sensu_repo_token: YOUR_TOKEN_HERE
+sensu_organization: "default"
+sensu_environment: "default"
+
+# Agent-specific variables
+sensu_agent:
+  user: agent
+  password: "P@ssw0rd!"
+  id: ""
+  subscriptions: ""
+  cache_dir: "/var/cache/sensu/sensu-agent"
+  deregister: false
+  deregistration_handler: ""
+  keepalive_timeout: 120
+  keepalive_internal: 20
+
+# Backend-specific variables
+sensu_backend:
+  user: admin
+  password: "P@ssw0rd!"
+  state_dir: "/var/lib/sensu"
+  agent_host: '"[::]" # listen on all IPv4 and IPv6 addresses'
+  agent_port: 8081
+  api_host: '"[::]" # listen on all IPv4 and IPv6 addresses'
+  api_port: 8080
+  store:
+    client_url: ""
+    peer_url: ""
+    initial_cluster: ""
+    initial_advertise_peer_url: ""
+    initial_cluster_state: ""
+    initial_cluster_token: ""

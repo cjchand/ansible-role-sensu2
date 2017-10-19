@@ -1,0 +1,6 @@
+---
+
+  - name: Install sensu-agent
+    apt: 
+      name: sensu-agent
+      state: present
