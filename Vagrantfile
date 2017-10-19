@@ -9,9 +9,9 @@ end
 VAGRANTFILE_API_VERSION = 2
 hosts_file = File.join(Dir.pwd, "vagrant-hosts.yml")
 hosts = YAML.load_file(hosts_file)["hosts"]
-# box_name = "centos/7"
+box_name = "centos/7"
 # box_name = "debian/jessie64"
-box_name = "ubuntu/trusty64"
+# box_name = "ubuntu/trusty64"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = false

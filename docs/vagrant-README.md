@@ -24,12 +24,16 @@ The sensu-agent process is installed and deployed on both servers, meaning when 
 Selecting an OS
 ===============
 
-While defaulted to Ubuntu Trusty, there are commented entries in the `Vagrantfile` for CentOS and Debian starting on line 12:
+While defaulted to CentOS 7, there are commented entries in the `Vagrantfile` for Debian and Ubuntu starting on line 12:
 ```
-# box_name = "centos/7"
+box_name = "centos/7"
 # box_name = "debian/jessie64"
-box_name = "ubuntu/trusty64"
+# box_name = "ubuntu/trusty64"
 ```
+
+Simply uncomment the OS you wish to use.
+
+**Note**: If you have already deployed Vagrant VMs, make sure to use `vagrant destroy` to get gid of those prior to making this change. Vagrant can get confused if you change things in `Vagrantfile` or `vagrant-hosts.yml` while it has existing VMs.
 
 
 Deploying VMs via Vagrant
