@@ -1,4 +1,4 @@
-Role Name
+ansible-role-sensu2
 =========
 
 This role deploys Sensu 2.x to the currently supported OS' (see Requirements section).
