@@ -21,6 +21,25 @@ The sensu-agent process is installed and deployed on both servers, meaning when 
   sensu-server-01   linux                   2017-10-19 17:51:51 +0000 UTC
 ```
 
+
+Sensu Repo Token Variable
+=========================
+
+As mentioned in the README, you must provide your Sensu repo token. You can do this in one of two ways:
+
+1. If you are not concerned with leaking your token (e.g.: you will only post it internally), then you can set it in vars/main.yml
+2. If you'd prefer to set it when running Vagrant, you can pass it is as an extra var
+
+You *must* choose one of these methods (or use #2 to override #1 at run-time, if you like).
+
+Using Environment Variable with Vagrant
+---------------------------------------
+
+Thanks to [this handy trick](https://gist.github.com/phantomwhale/9657134), you can use an environment variable to pass your token in as an [extra-var](http://docs.ansible.com/ansible/latest/playbooks_variables.html#passing-variables-on-the-command-line) like so:
+
+`ANSIBLE_ARGS='--extra-vars "sensu_repo_token=aaaa...REDACTED...aae"' vagrant up`
+
+
 Selecting an OS
 ===============
 

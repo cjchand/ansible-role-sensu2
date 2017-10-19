@@ -45,6 +45,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           "sensu_backend" => [ "sensu-server-01" ],
           "sensu_agent" => [ "sensu-agent-01", "sensu-server-01" ]
         }
+        # Trick sourced from https://gist.github.com/phantomwhale/9657134 to pass in extra-vars
+        # ANSIBLE_ARGS='--extra-vars "some_var=value"' vagrant up
+        ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
         ansible.playbook = "./tests/provision.yml"
       end
     end
