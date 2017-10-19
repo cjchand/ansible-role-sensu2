@@ -21,6 +21,17 @@ The sensu-agent process is installed and deployed on both servers, meaning when 
   sensu-server-01   linux                   2017-10-19 17:51:51 +0000 UTC
 ```
 
+Selecting an OS
+===============
+
+While defaulted to Ubuntu Trusty, there are commented entries in the `Vagrantfile` for CentOS and Debian starting on line 12:
+```
+# box_name = "centos/7"
+# box_name = "debian/jessie64"
+box_name = "ubuntu/trusty64"
+```
+
+
 Deploying VMs via Vagrant
 =========================
 
