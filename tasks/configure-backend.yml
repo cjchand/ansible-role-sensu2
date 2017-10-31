@@ -1,8 +1,14 @@
 --- 
 
+  - name: Check if backend.yml exists
+    stat:
+      path: /etc/sensu/backend.yml
+    register: backend_config_exists
+
   - name: Deploy sensu-backend config
     template: src=backend.yml.j2 dest=/etc/sensu/backend.yml
     notify: restart sensu-backend
+    when: backend_config_exists.stat is defined and  backend_config_exists.stat.exists == False
 
   # Need to ensure sensu-backend is started upon initial deploy, else sensuctl commands will fail
   - meta: flush_handlers
